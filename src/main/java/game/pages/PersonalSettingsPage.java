@@ -85,7 +85,7 @@ public class PersonalSettingsPage extends AbstractComponents {
 				scrollToTheElement(documentTableBy);
 				WaitForElementToAppear(documentTableBy);
 				driver.findElement(changeButtonNewsletterDocumentTableBy).click();
-				WaitForElementToAppear(changeNewsLetterFormBy);
+				WaitForElementToAppear(changeNewsLetterFormBy,10);
 
 		} catch (Exception e) {
 			System.out.println(e.getStackTrace());
@@ -101,7 +101,6 @@ public class PersonalSettingsPage extends AbstractComponents {
 		//Select receive email radio button
 		WaitForElementToAppear(By.className("c-page__modal"),20);
 		WaitForElementToAppear(By.xpath("//form[contains(@class,'c-modal__content')]//div[contains(@for,'receiveEmailYes')]"),20);
-		//Thread.sleep(5000);
 		WebElement radioBtn1 = driver.findElement(receiveEmailRadioButtonBy);
 		((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
 
@@ -112,8 +111,8 @@ public class PersonalSettingsPage extends AbstractComponents {
 	}
 
 	public void selectRemindLaterToGetLatestNews() throws InterruptedException {
+		
 		//Select remind me later radio button
-	//	Thread.sleep(5000);
 		WaitForElementToAppear(By.className("c-modal__inner"));
 
 		WebElement radioBtn1 = driver.findElement(remindLaterToReceiveEmailRadioButtonBy);
@@ -136,7 +135,9 @@ public class PersonalSettingsPage extends AbstractComponents {
 		WaitForElementToAppear(personalSettingsHeader);
 		driver.findElement(personalSettingsHeader).click();
 		clickOnChangeButtonInTable(rowText);
-		Thread.sleep(5000);
+	
+		WaitForElementToAppear(By.className("c-page__modal"),20);
+		WaitForElementToAppear(By.xpath("//form[contains(@class,'c-modal__content')]//div[contains(@for,'receiveEmailYes')]"),20);
 
 	}
 }
