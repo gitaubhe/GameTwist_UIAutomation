@@ -1,0 +1,8 @@
+testrunners\TestNGTestRunner.class
+steps\LoggedInPageSteps.class
+steps\LoginPageSteps.class
+steps\ApplicationHooks.class
+steps\PersonalSettingsPageSteps.class
+steps\ApplicationLaunch.class
+steps\HomePageSteps.class
+steps\RegistrationPageSteps.class

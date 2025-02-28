@@ -35,7 +35,7 @@ public class LoginPage extends AbstractComponents {
 		driver.findElement(Login_Button).click();
 
 		waitForPageLoad();
-		WaitForElementToAppear(userProfile);
+		WaitForElementToAppear(userProfile,20);
 
 	}
 
@@ -65,7 +65,7 @@ public class LoginPage extends AbstractComponents {
 		//Click on confirm button
 		driver.findElement(Confirm_Button).click();
 		waitForPageLoad();
-		WaitForElementToAppear(userProfile);
+		WaitForElementToAppear(userProfile,20);
 
 	}
 

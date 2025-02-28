@@ -1,4 +1,10 @@
 game\factory\DriverManager.class
+game\util\AbstractComponents$1.class
+game\util\ConfigReader.class
+game\pages\LoggedInPage.class
+game\pages\LoginPage.class
+game\pages\PersonalSettingsPage.class
+game\util\ApplicationHelpers.class
 game\util\AbstractComponents.class
 game\pages\HomePage.class
-game\util\ConfigReader.class
+game\pages\RegistrationPage.class

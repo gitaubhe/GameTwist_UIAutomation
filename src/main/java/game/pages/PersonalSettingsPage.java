@@ -99,19 +99,23 @@ public class PersonalSettingsPage extends AbstractComponents {
 	public void selectToGetLatestNews() throws InterruptedException {
 
 		//Select receive email radio button
-		Thread.sleep(5000);
+		WaitForElementToAppear(By.className("c-page__modal"),20);
+		WaitForElementToAppear(By.xpath("//form[contains(@class,'c-modal__content')]//div[contains(@for,'receiveEmailYes')]"),20);
+		//Thread.sleep(5000);
 		WebElement radioBtn1 = driver.findElement(receiveEmailRadioButtonBy);
 		((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
 
 		//Click on confirm button
 		WaitForElementToBeClickable(confirmButtonBy);
 		driver.findElement(confirmButtonBy).click();
-		WaitForElementToAppear(personalSettingsHeader);
+		WaitForElementToAppear(personalSettingsHeader,10);
 	}
 
 	public void selectRemindLaterToGetLatestNews() throws InterruptedException {
 		//Select remind me later radio button
-		Thread.sleep(5000);
+	//	Thread.sleep(5000);
+		WaitForElementToAppear(By.className("c-modal__inner"));
+
 		WebElement radioBtn1 = driver.findElement(remindLaterToReceiveEmailRadioButtonBy);
 		((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
 
